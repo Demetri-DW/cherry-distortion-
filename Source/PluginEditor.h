@@ -2,6 +2,8 @@
 
 #include "PluginProcessor.h"
 #include "Square.h"
+#include "Trashwang.h"
+
 //==============================================================================
 class AudioPluginAudioProcessorEditor final : public juce::AudioProcessorEditor
 {
@@ -15,7 +17,8 @@ public:
 
 private:
     Square square; //created an object in the editor
-
+    juce::Slider frequencySlider;
+    Trashwang trashwang;
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     AudioPluginAudioProcessor& processorRef;

@@ -13,6 +13,11 @@ class Sinewave {
 public:
     void prepare (double sampleRate, int numChannels);
     void process (juce::AudioBuffer<float>& buffer);
+    [[nodiscard]] float getAmplitude() const { return amplitude; }
+    [[nodiscard]] float getFrequency() const { return frequency; }
+
+    void setAmplitude (float newAmplitude){amplitude = newAmplitude;}
+    void setFrequency (float newFrequency){frequency = newFrequency;}
 
 private:
     float amplitude = 0.2f;

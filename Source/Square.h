@@ -7,7 +7,10 @@
 class Square : public juce::Component
 {
 public:
+    Square();
     void paint (juce::Graphics&) override;
     void resized() override;
 
+private:
+    juce::Image coverImage;
 };

@@ -27,6 +27,11 @@ CPMAddPackage(
     GIT_TAG origin/master
 )
 
+juce_add_binary_data(PluginAssets
+        SOURCES
+        Source/Wolf_Cover2.jpg
+)
+
 # Make sure you include any new source files here
 set(SourceFiles
         Source/PluginEditor.cpp
@@ -37,6 +42,10 @@ set(SourceFiles
         Source/Square.h
         Source/Sinewave.cpp
         Source/Sinewave.h
+        Source/Trashwang.cpp
+        Source/Trashwang.h
+        Source/Background.cpp
+        Source/Background.h
 )
 
 # Change these to your own preferences
@@ -85,5 +94,6 @@ target_link_libraries(${PROJECT_NAME}
         juce::juce_recommended_config_flags
         juce::juce_recommended_lto_flags
         juce::juce_recommended_warning_flags
+        PRIVATE
+        PluginAssets
 )
-

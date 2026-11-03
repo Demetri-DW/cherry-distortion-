@@ -8,8 +8,16 @@ AudioPluginAudioProcessorEditor::AudioPluginAudioProcessorEditor (AudioPluginAud
     juce::ignoreUnused (processorRef);
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    addAndMakeVisible(square); //adds a child componenet to this one, and also makes the child visible if it isn't already
+    addAndMakeVisible (square);
+    frequencySlider.setSliderStyle (juce::Slider::SliderStyle::Rotary);
+
+    frequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true,100,50);
+    addAndMakeVisible(frequencySlider);
+    addAndMakeVisible(trashwang);
     setSize (400, 600);
+    
+
+
 }
 
 AudioPluginAudioProcessorEditor::~AudioPluginAudioProcessorEditor()
@@ -24,12 +32,13 @@ void AudioPluginAudioProcessorEditor::paint (juce::Graphics& g)
 
     g.setColour (juce::Colours::white);
     g.setFont (15.0f);
-    g.drawFittedText ("Hello Audio!", getLocalBounds(), juce::Justification::centred, 1);
 }
 
 void AudioPluginAudioProcessorEditor::resized()
 {
+    square.setBounds (100, 50, 200, 200);
+    trashwang.setBounds (90, 190, 200, 200);
+    frequencySlider.setBounds (100, 300, 200, 200);
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
-    square.setBounds(100,100,200,200);
 }
