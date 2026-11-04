@@ -10,12 +10,12 @@ AudioPluginAudioProcessorEditor::AudioPluginAudioProcessorEditor (AudioPluginAud
     // editor's size to whatever you need it to be.
     addAndMakeVisible (square);
     frequencySlider.setSliderStyle (juce::Slider::SliderStyle::Rotary);
-
+    addAndMakeVisible(background);
     frequencySlider.setTextBoxStyle(juce::Slider::TextBoxBelow, true,100,50);
     addAndMakeVisible(frequencySlider);
     addAndMakeVisible(trashwang);
     setSize (400, 600);
-    
+
 
 
 }
@@ -36,6 +36,7 @@ void AudioPluginAudioProcessorEditor::paint (juce::Graphics& g)
 
 void AudioPluginAudioProcessorEditor::resized()
 {
+    background.setBounds (getLocalBounds());
     square.setBounds (100, 50, 200, 200);
     trashwang.setBounds (90, 190, 200, 200);
     frequencySlider.setBounds (100, 300, 200, 200);

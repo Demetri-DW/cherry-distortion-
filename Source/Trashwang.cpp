@@ -5,11 +5,11 @@
 #include "Trashwang.h"
 
 Trashwang::Trashwang() {
-    
+
 }
 
 void Trashwang::paint(juce::Graphics& g) {
-    g.setColour(juce::Colour::greyLevel(0.5));
+    g.setColour(juce::Colour());
     g.drawText ("TRASHWANG!!!!",
                getLocalBounds(),
                juce::Justification::centred,
